@@ -43,10 +43,24 @@
       audio {
         display: none;
       }
+      .video-container {
+        width: 80%;
+        max-width: 600px;
+        margin-top: 20px;
+      }
+      .video {
+        width: 100%;
+        height: auto;
+        border-radius: 50px;
+      }
       @media (max-width: 600px) {
         select {
           width: 50%;
           max-width: none;
+        }
+        .content-container,
+        .video-container {
+          width: 100%;
         }
       }
     </style>
@@ -65,10 +79,15 @@
       <img id="displayImage" src="f.png" alt="Image" />
     </div>
 
-    <audio id="backgroundMusic" autoplay loop>
-      <source src="song.mp3" type="audio/mpeg" />
-      Your browser does not support the audio element.
-    </audio>
+    <div class="video-container">
+      <video
+        src="https://res.cloudinary.com/dkhb9ioku/video/upload/v1718926544/INEXT/vdqyppzdlwpesdja3gqm.mp4"
+        autoplay
+        loop
+        controls
+        class="video"
+      ></video>
+    </div>
 
     <script>
       function changeContent() {
@@ -95,10 +114,6 @@
             break;
         }
       }
-
-      window.onload = function () {
-        document.getElementById("backgroundMusic").play();
-      };
     </script>
   </body>
 </html>
